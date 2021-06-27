@@ -46,13 +46,9 @@
 		<!-- <div data-scroll class="txt_main_vertical">信頼する人に、信頼される仕事を</div> -->
 		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 		<div class="slideshow">
-			<div class="slideshow-image" style="background-image: url('../img/home/tools-864983_1280.jpg')"></div>
-			<div class="slideshow-image" style="background-image: url('../img/home/AdobeStock_249446997_Preview.jpeg')"></div>
-			<div class="slideshow-image" style="background-image: url('../img/home/the-sunset.jpg')"></div>
-			<div class="slideshow-image" style="background-image: url('../img/home/photo0000-3442.jpg')"></div>
-			<!-- <div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/buildings/1600x1400')"></div>
-			<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/food/1600x1400')"></div>
-			<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/technology/1600x1400')"></div> -->
+      <% contents.mvImages.contents.forEach(imgObj => { %>
+        <div class="slideshow-image" style="background-image: url(<%= imgObj.image.url %>)"></div>
+      <% }) %>
 		</div>
 	</div>
 	<div class="flexbox-container-vertical-center"><a href="#" class="scroll-nav">Scroll</a></div>
@@ -64,16 +60,9 @@
 				</div>
 				<div data-slideInRight>
 					<div class="concept-box">
-						<p class="concept-paragraph">はじまりから終わりまで、堅実な仕事をいたします。	</p>
-						<p class="concept-paragraph">
-							私たちを信用し依頼してくださる皆様に、<br>
-							喜んでいただきたい、期待に応えたい、熱い姿勢を持ち続けることが<br>
-							美しく、自慢の現場づくりにつながると思っています。
-						</p>
-						<p class="concept-paragraph">
-							「和」を大切に仲間や社員がお互いを信頼しあい、
-							認められ、選ばれる企業を目指し続けます。
-						</p>
+            <p class="concept-paragraph">
+              <%- contents.concept.text %>
+            </p>
 					</div>
 				</div>
 		</section>
@@ -86,18 +75,11 @@
 					</div>
 					<div data-slideInRight>
 						<div class="f-greet-container">
-							<div class="thumbnail frame" style="background-image: url(./img/home/startup-3267505_1920.jpg);"></div>
+              <div class="thumbnail frame" style="background-image: url(<%= contents.ceoMessage.image.url %>);"></div>
 							<div class="represent-greeting-box">
-								<p class="represent-greeting-paragraph">代表取締役社長 神田丈二</p>
-								<p class="represent-greeting-paragraph">
-									私たちを信用し依頼してくださる皆様に、<br>
-									喜んでいただきたい、期待に応えたい、熱い姿勢を持ち続けることが<br>
-									美しく、自慢の現場づくりにつながると思っています。
-								</p>
-								<p class="represent-greeting-paragraph">
-									「和」を大切に仲間や社員がお互いを信頼しあい、
-									認められ、選ばれる企業を目指し続けます。
-								</p>
+								<div class="represent-greeting-paragraph">
+                  <%- contents.ceoMessage.text %>
+                </div>
 							</div>
 						</div>
 					</div>
@@ -110,33 +92,15 @@
 				<h2 data-slideInLeft class="heading03">事業内容</h2>
 				<div data-slideInRight class="about-content">
 					<div class="f-container">
-						<div class="about_home f-item">
-							<div class="thumbnail"></div>
-							<h3>建設事業</h3>
-							<div class="lead">
-								<p>主にビルやマンションなどの大型案件を手がけています。</p>
-							</div>
-						</div>
-						
-						<div class="about_home f-item">
-							<a href="">
-								<div class="thumbnail"></div>
-								<h3>運送事業</h3>
-								<div class="lead">
-									<p>一般貨物の輸送を中心に、物流に伴う様々なニーズに対応しています。</p>
-								</div>
-							</a>
-						</div>
-						
-						<div class="about_home f-item">
-							<a href="">
-								<div class="thumbnail"></div>
-								<h3>建設機械組立解体</h3>
-								<div class="lead">
-									<p>重機組立解体に伴うクレーン及びフォークリフトでの作業を行なっております。</p>
-								</div>
-							</a>
-						</div>
+            <% contents.services.contents.forEach(service => { %>
+              <div class="about_home f-item">
+                <div class="thumbnail" style="background-image: url(<%= service.image.url %>)"></div>
+                <h3><%= service.name %></h3>
+                <div class="lead">
+                  <p><%= service.text %></p>
+                </div>
+              </div>
+            <% }) %>
 					</div>
 				</div>	
 			</div>
@@ -147,24 +111,14 @@
 				<div class="character-statue-child">
 					<h2 data-slideInLeft class="heading04">求人について</h2>
 					<div data-slideInRight class="character-statues-contents lider wrap_article">
-						<div class="slick-slide article">
-							<a href="https://www.jyutaku-reform.co.jp/update/blog/625">
-								<time datetime="2020-09-12">協調性</time>
-								<h3>チームで協力し、顧客に向き合える</h3>
-							</a>
-						</div>
-						<div class="slick-slide article">
-							<a href="https://www.jyutaku-reform.co.jp/update/blog/612">
-								<time datetime="2020-09-09">責任感</time>
-								<h3>最後まで仕事をやり遂げることができる</h3>
-							</a>
-						</div>
-						<div class="slick-slide article">
-							<a href="https://www.jyutaku-reform.co.jp/update/blog/595">
-								<time datetime="2020-08-11">積極性</time>
-								<h3>自ら考え行動することができる</h3>
-							</a>
-					</div>
+            <% contents.carriers.contents.forEach(carrier => { %>
+              <div class="slick-slide article">
+                <a href="https://www.jyutaku-reform.co.jp/update/blog/625">
+                  <time datetime="2020-09-12"><%= carrier.title %></time>
+                  <h3><%= carrier.description %></h3>
+                </a>
+              </div>
+            <% }) %>
 				</div>
 			</section>
 		</div>
@@ -173,42 +127,14 @@
 			<div class="gallery-child">
 				<h2 data-slideInLeft class="heading05">ギャラリー</h2>
 				<div data-slideInRight class="slider wrap_gallery_article f-greet-container">
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>重機預かり</h3>
-						</a>
-					</div>
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>ひび割れ補修工1</h3>
-						</a>
-					</div>
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>ひび割れ補修工2</h3>
-						</a>
-					</div>
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>ひび割れ補修工3</h3>
-						</a>
-					</div>
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>ひび割れ補修工4</h3>
-						</a>
-					</div>
-					<div class="slick-slide gallery_article">
-						<a href="">
-							<div class="thumbnail" style="background-image: url(./img/home/tools-864983_1280.jpg);"></div>
-							<h3>ひび割れ補修工5</h3>
-						</a>
-					</div>
+          <% contents.galleries.contents.forEach(gallery => { %>
+            <div class="slick-slide gallery_article">
+              <a href="">
+                <div class="thumbnail" style="background-image: url(<%= gallery.image.url %>);"></div>
+                <h3><%= gallery.title %></h3>
+              </a>
+            </div>
+          <% }) %>
 				</div>
 			</div>
 		</section>
@@ -450,6 +376,5 @@ navToggle.addEventListener("click", function () {
 });
 
 </script>
-<script src="./contact.js"></script>
 </body>
 </html>
