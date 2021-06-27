@@ -277,7 +277,7 @@ body{
 ---------------------------------------------- */
 .btn_type01{
   display: block;
-  width: 240px;
+  width: 130px;
   border: 1px solid #52796F;
   margin: 0 auto;
   text-align: center;
@@ -286,6 +286,7 @@ body{
   color: #FFF;
   background: #52796F;
   transition: background .3s;
+  height: 30px;
 }
 
 .btn_type01:hover{
@@ -1087,7 +1088,7 @@ h1 small:last-child {
 .represent-greeting-section{
   width: 100%;
   background-size: cover;
-  background-image: url(../img/home/kikagaku.jpg);
+  background-image: url(../img/home/test01.jpg);
   background-attachment: fixed;
 }
 .represent-greeting{
@@ -1252,7 +1253,7 @@ z-index: -1;
 .character-statue-section{
   width: 100%;
   background-size: cover;
-  background-image: url(../img/home/kikagaku.jpg);
+  background-image: url(../img/home/test02.jpg);
   background-attachment: fixed;
 }
 .character-statue{
