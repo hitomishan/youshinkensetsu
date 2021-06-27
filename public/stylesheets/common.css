@@ -1295,6 +1295,18 @@ z-index: -1;
     display: block;
     max-width: 50px;
   }
+  .character-statue-section{
+    width: 100%;
+    background-size: cover;
+    background-image: url(../img/home/test02.jpg);
+    background-attachment: fixed;
+  }
+  .represent-greeting-section{
+    width: 100%;
+    background-size: cover;
+    background-image: url(../img/home/test01.jpg);
+    background-attachment: fixed;
+  }
 }
 
 
@@ -1344,5 +1356,17 @@ z-index: -1;
   }
   .footer_inner02 .f_inner01 {
     width: initial;
+  }
+  .character-statue-section{
+    width: 100%;
+    background-size: cover;
+    background-image: url(../img/home/test02.jpg);
+    background-attachment: fixed;
+  }
+  .represent-greeting-section{
+    width: 100%;
+    background-size: cover;
+    background-image: url(../img/home/test01.jpg);
+    background-attachment: fixed;
   }
 }
