@@ -1,10 +1,10 @@
 const dotenvConfig = require("../dotenvConfig")
 const nodemailer = require("nodemailer")
 require('dotenv').config(dotenvConfig)
-const { MAIL_HOST, MAIL_USER, MAIL_PASSWORD, RECIEVE_CONTACT_MAIL_ADDRESS } = process.env
+const { MAIL_HOST, MAIL_USER, MAIL_PASSWORD, RECIEVE_CONTACT_MAIL_ADDRESS, MAIL_PORT } = process.env
 const transporter = nodemailer.createTransport({
   host: MAIL_HOST,
-  port: 465,
+  port: MAIL_PORT,
   secure: true,
   auth: {
     user: MAIL_USER,
@@ -29,8 +29,8 @@ const generateReplyContactText = (toSendInfo) => {
     本メールに返信いただいてもご連絡いたしかねますのでご了承ください。
     ---------------------------------
     株式会社 陽神建設
-    Email:
-    Web:
+    Email: info@youshin.jp
+    Web: http://yoshin-kensetsu.com/
     ---------------------------------
   `
 }
@@ -48,7 +48,7 @@ const generateContactText = (toSendInfo) => {
     ---------------------------------
     問い合わせ元 --------------------
     株式会社 陽神建設
-    Email:
+    Email: 
     Web:
     ---------------------------------
   `
